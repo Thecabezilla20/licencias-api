@@ -1,0 +1,17 @@
+# Variables de entorno (contienen credenciales — nunca commitear)
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+node_modules/
+
+# Logs de auditoría
+logs/
+
+# Cobertura de tests
+coverage/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

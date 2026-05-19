@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"d:\\\\licencias-api\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(npm install *)",
+      "PowerShell(sqlcmd -S \".\\\\SQLEXPRESS\" -E -Q \"SELECT name, physical_name FROM sys.master_files WHERE database_id = DB_ID\\('LicenciasLaredo'\\)\")",
+      "PowerShell(sqlcmd -S \".\\\\SQLEXPRESS\" -E -Q \"ALTER DATABASE LicenciasLaredo SET OFFLINE WITH ROLLBACK IMMEDIATE;\")",
+      "PowerShell(sqlcmd -S \".\\\\SQLEXPRESS\" -E -Q \"ALTER DATABASE LicenciasLaredo SET ONLINE;\")",
+      "PowerShell(\\(Get-WmiObject Win32_Service -Filter \"Name='MSSQL`$SQLEXPRESS'\"\\).StartName)",
+      "PowerShell(icacls \"D:\\\\BD-MUNI-LAREDO\")",
+      "PowerShell(sqlcmd -S \".\\\\SQLEXPRESS\" -E -Q \"SELECT name, state_desc, physical_name FROM sys.master_files mf JOIN sys.databases d ON mf.database_id = d.database_id WHERE d.name = 'LicenciasLaredo'\")",
+      "PowerShell(sqlcmd -S \".\\\\SQLEXPRESS\" -E -Q \"SELECT d.name, d.state_desc, mf.physical_name FROM sys.master_files mf JOIN sys.databases d ON mf.database_id = d.database_id WHERE d.name = 'LicenciasLaredo'\")",
+      "Read(//d/licencias-frontend/**)",
+      "Bash(dir)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' http://localhost:3000/api/auth/perfil)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' http://localhost:3000/api/expedientes/estadisticas)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' http://localhost:3000/api/expedientes/1)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' http://localhost:3000/api/inspecciones/1)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sIjoiZGVmZW5zYV9jaXZpbCIsIm5vbWJyZSI6IkRlZmVuc2EgVGVzdCIsImlhdCI6MTc3OTAwMDEzOCwiZXhwIjoxNzc5MDAzNzM4fQ.5ZbOBIWZxLm4Slj17XT3dQ7yI6rP0PNDSBr8tv056p4' http://localhost:3000/api/expedientes)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sIjoiZGVmZW5zYV9jaXZpbCIsIm5vbWJyZSI6IkRlZmVuc2EgVGVzdCIsImlhdCI6MTc3OTAwMDEzOCwiZXhwIjoxNzc5MDAzNzM4fQ.5ZbOBIWZxLm4Slj17XT3dQ7yI6rP0PNDSBr8tv056p4' http://localhost:3000/api/inspecciones?limite=2)",
+      "Bash(curl -s -X PATCH -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' -H 'Content-Type: application/json' -d '{\"estado\":\"Recibido\"}' http://localhost:3000/api/expedientes/3/estado)",
+      "Bash(curl -s -X PATCH -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' -H 'Content-Type: application/json' -d '{\"estado\":\"Inspeccionado\"}' http://localhost:3000/api/expedientes/1/estado)",
+      "Bash(curl -s -X POST -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' -H 'Content-Type: application/json' -d '{\"solicitante\":{\"tipo_persona\":\"Natural\"}}' http://localhost:3000/api/expedientes)",
+      "Bash(curl -s -X PATCH -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' -H 'Content-Type: application/json' -d '{\"nivel_riesgo\":\"Extremo\"}' http://localhost:3000/api/expedientes/1/clasificar)",
+      "Bash(curl -s -H \"Authorization: Bearer tokenfalso\" http://localhost:3000/api/expedientes)",
+      "Bash(curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW5pc3RyYWRvciIsIm5vbWJyZSI6IkFkbWluIFRlc3QiLCJpYXQiOjE3NzkwMDAwNjcsImV4cCI6MTc3OTAwMzY2N30.17m-iia5vfoRxHbI0KHn41hp1RvYtRxvdC-ihnJWkBg' 'http://localhost:3000/api/inspecciones?limite=2&pagina=1')",
+      "Bash(node -e \"process.stdin.resume\\(\\);let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{const o=JSON.parse\\(d\\);console.log\\('total:',o.total,'datos:',o.datos?.length\\)}\\)\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/auth/login -H \"Content-Type: application/json\" -d \"{\\\\\"credencial\\\\\":\\\\\"x\\\\\",\\\\\"password\\\\\":\\\\\"x\\\\\"}\")"
+    ]
+  }
+}
