@@ -30,7 +30,10 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'Microservicio para la gestión de licencias en MDL'
     },
-    servers: [{ url: 'http://localhost:3000/api' }],
+    sservers: [
+  { url: 'https://licencias-api-5y31.onrender.com/api', description: 'Producción' },
+  { url: 'http://localhost:3000/api', description: 'Local' }
+],
     components: {
       securitySchemes: {
         bearerAuth: {
