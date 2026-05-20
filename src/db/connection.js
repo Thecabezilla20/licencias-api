@@ -8,7 +8,7 @@ const config = {
   port: 1433,
   options: {
     encrypt: true,
-    trustServerCertificate: true,
+    trustServerCertificate: false,
   },
   pool: {
     max: 10,
@@ -27,7 +27,7 @@ async function getPool() {
   }
   pool = await sql.connect(config);
   pool.on('error', () => { pool = null; });
-  console.log('Conectado a SQL Server local — LicenciasLaredo');
+  console.log('Conectado a Azure SQL — LicenciasLaredo');
   return pool;
 }
 
