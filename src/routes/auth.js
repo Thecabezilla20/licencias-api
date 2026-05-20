@@ -25,20 +25,20 @@ const loginLimiter = rateLimit({
  *   post:
  *     summary: Iniciar sesión
  *     tags: [Autenticación]
- *     requestBody:
+*     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
- *             required: [usuario, password]
+ *             required: [credencial, password]
  *             properties:
- *               usuario:
+ *               credencial:
  *                 type: string
- *                 example: admin
+ *                 example: "admin@munilaredo.gob.pe"
  *               password:
  *                 type: string
- *                 example: "Mi@Password123"
+ *                 example: "admin123"
  *     responses:
  *       200:
  *         description: Login exitoso — retorna token JWT
