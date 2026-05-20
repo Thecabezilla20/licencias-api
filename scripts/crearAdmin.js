@@ -5,7 +5,7 @@ const { getPool, sql } = require(path.join(__dirname, '..', 'src', 'db', 'connec
 
 async function crearAdmin() {
   const email    = process.argv[2] || 'admin@munilaredo.gob.pe';
-  const password = process.argv[3] || 'Admin1234!';
+  const password = process.argv[3] || 'admin123';
   const nombre   = process.argv[4] || 'Administrador del Sistema';
 
   const hash = await bcrypt.hash(password, 12);
