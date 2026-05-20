@@ -25,7 +25,7 @@ const loginLimiter = rateLimit({
  *   post:
  *     summary: Iniciar sesión
  *     tags: [Autenticación]
-*     requestBody:
+ *     requestBody:
  *       required: true
  *       content:
  *         application/json:
@@ -35,7 +35,8 @@ const loginLimiter = rateLimit({
  *             properties:
  *               credencial:
  *                 type: string
- *                 example: "admin@munilaredo.gob.pe"
+ *                 description: "Email o username del usuario"
+ *                 example: "admin"
  *               password:
  *                 type: string
  *                 example: "admin123"
