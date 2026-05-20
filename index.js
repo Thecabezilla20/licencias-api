@@ -26,7 +26,7 @@ const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Licencias API',
+      title: 'Miceroservicio de Licencias - MDL',
       version: '1.0.0',
       description: 'Microservicio para la gestión de licencias en MDL'
     },
@@ -68,7 +68,7 @@ app.use(auditMiddleware);
 
 // ─── Swagger UI (ANTES del 404 handler) ──────────────────────────────────────
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, {
-  customSiteTitle: 'Licencias API Docs',
+  customSiteTitle: 'MicroServicio de Licencias',
   swaggerOptions: { persistAuthorization: true }
 }));
 
